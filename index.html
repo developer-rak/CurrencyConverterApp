@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CurrencyConverterApp</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- FONT AWESOME CDN LINK -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>Currency Converter</header>
+        <form action="#">
+            <div class="amount">
+                <p>Enter Amount</p>
+                <input type="text" value="1">
+            </div>
+            <div class="drop-list">
+                <div class="from">
+                    <p>From</p>
+                    <div class="select-box">
+                        <img src="https://flagsapi.com/PK/flat/64.png" alt="Flag">
+                        <select name="" id="">
+                            <option value="USD">USD</option>
+                            <option value="PKR">PKR</option>
+                            <option value="INR">INR</option>
+                            <option value="NPR">NPR</option>
+                            <option value="MAD">MAD</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="icon"><i class="fas fa-exchange-alt"></i></div>
+                <div class="to">
+                    <p>To</p>
+                    <div class="select-box">
+                        <img src="https://flagsapi.com/US/flat/64.png" alt="Flag">
+                        <select name="" id="">
+                            <option value="USD">USD</option>
+                            <option value="PKR">PKR</option>
+                            <option value="INR">INR</option>
+                            <option value="NPR">NPR</option>
+                            <option value="MAD">MAD</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="exchange-rate">1 USD = 286.89 PKR</div>
+            <button>Get Exchange Rate</button>
+        </form>
+    </div>
+
+    <!-- SCRIPT -->
+    <script src="script.js"></script>
+</body>
+
+</html>
