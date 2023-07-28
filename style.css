@@ -80,6 +80,20 @@ form .drop-list {
     margin: 0 -5px 0 5px;
 }
 
+.select-box select::-webkit-scrollbar {
+    width: 8px;
+}
+
+.select-box select::-webkit-scrollbar-track {
+    background: #fff;
+}
+
+.select-box select::-webkit-slider-thumb {
+    background: #888;
+    border-radius: 8px;
+    border-right: 2px solid #fff;
+}
+
 .select-box img {
     max-width: 25px;
 }
