@@ -59,6 +59,7 @@ form input:focus {
 
 form .drop-list {
     display: flex;
+    margin-top: 20px;
     align-items: center;
     justify-content: space-between;
 }
@@ -67,15 +68,37 @@ form .drop-list {
     display: flex;
     height: 45px;
     width: 115px;
+    border-radius: 5px;
     align-items: center;
     justify-content: center;
-    background: red;
+    border: 1px solid #999;
 }
 
 .select-box select {
     width: auto;
+    font-size: 16px;
+    margin: 0 -5px 0 5px;
 }
 
 .select-box img {
     max-width: 25px;
+}
+
+.drop-list .icon {
+    cursor: pointer;
+    font-size: 22px;
+    margin-top: 30px;
+}
+
+form .exchange-rate {
+    font-size: 17px;
+    margin: 20px 0 30px;
+}
+
+form button {
+    height: 52px;
+    color: #fff;
+    font-size: 17px;
+    cursor: pointer;
+    background: #A37635;
 }
