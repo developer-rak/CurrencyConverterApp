@@ -1,4 +1,5 @@
 const dropList = document.querySelectorAll(".drop-list select");
+getButton = document.querySelector("form button");
 
 for (let i = 0; i < dropList.length; i++) {
     for (currency_code in country_code) {
@@ -15,5 +16,21 @@ for (let i = 0; i < dropList.length; i++) {
         let optionTag = `<option value="${currency_code}" ${selected}>${currency_code}</option>`;
         // // inserting option tag inside select tag
         dropList[i].insertAdjacentHTML("beforeend", optionTag);
+    }
+}
+
+getButton.addEvetListner("click", e => {
+    e.preventDefault(); // preventing form from submitting
+    getExchangeRate();
+});
+
+function getExchangeRate() {
+    const amount = document.querySelector(".amount input");
+    let amountVal = amount.value;
+
+    // if user don't enter any value or enter 0 then we'll put 1 value by defualt in the input field
+    if (amountVal == "" || amountVal == "0") {
+        amount.value = "1";
+        amountVal = 1;
     }
 }

@@ -88,7 +88,7 @@ form .drop-list {
     background: #fff;
 }
 
-.select-box select::-webkit-slider-thumb {
+.select-box select::-webkit-scrollbar-thumb {
     background: #888;
     border-radius: 8px;
     border-right: 2px solid #fff;
