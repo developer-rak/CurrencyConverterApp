@@ -1,5 +1,7 @@
-const dropList = document.querySelectorAll(".drop-list select");
-getButton = document.querySelector("form button");
+const dropList = document.querySelectorAll(".drop-list select"),
+    fromCurrency = document.querySelector(".from select"),
+    toCurrency = document.querySelector(".to select"),
+    getButton = document.querySelector("form button");
 
 for (let i = 0; i < dropList.length; i++) {
     for (currency_code in country_code) {
@@ -33,4 +35,6 @@ function getExchangeRate() {
         amount.value = "1";
         amountVal = 1;
     }
+    let url = `https://v6.exchangerate-api.com/v6/521ec5eba5748c29b910c85b/latest/${fromCurrency.value}`;
+    fetch(url).then(response => console.log(response.json()));
 }
