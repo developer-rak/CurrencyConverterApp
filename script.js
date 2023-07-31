@@ -21,7 +21,7 @@ for (let i = 0; i < dropList.length; i++) {
     }
 }
 
-getButton.addEvetListner("click", e => {
+getButton.addEventListener("click", e => {
     e.preventDefault(); // preventing form from submitting
     getExchangeRate();
 });
@@ -36,5 +36,9 @@ function getExchangeRate() {
         amountVal = 1;
     }
     let url = `https://v6.exchangerate-api.com/v6/521ec5eba5748c29b910c85b/latest/${fromCurrency.value}`;
-    fetch(url).then(response => console.log(response.json()));
+    // fetching api response and returning it with parsing into js obj and in another then method recieving that object
+    fetch(url).then(response => response.json()).then(result => {
+        let exchangeRate = result.conversion_rates[toCurrency.value];
+        console.log(exchangeRate);
+    })
 }
