@@ -27,7 +27,8 @@ getButton.addEventListener("click", e => {
 });
 
 function getExchangeRate() {
-    const amount = document.querySelector(".amount input");
+    const amount = document.querySelector(".amount input"),
+        exchangeRateTxt = document.querySelector(".exchange-rate");
     let amountVal = amount.value;
 
     // if user don't enter any value or enter 0 then we'll put 1 value by defualt in the input field
@@ -35,10 +36,12 @@ function getExchangeRate() {
         amount.value = "1";
         amountVal = 1;
     }
+    exchangeRateTxt.innerText = "Getting exchange rate..."
     let url = `https://v6.exchangerate-api.com/v6/521ec5eba5748c29b910c85b/latest/${fromCurrency.value}`;
     // fetching api response and returning it with parsing into js obj and in another then method recieving that object
     fetch(url).then(response => response.json()).then(result => {
         let exchangeRate = result.conversion_rates[toCurrency.value];
-        console.log(exchangeRate);
+        let totalExchangeRate = (amountVal * exchangeRate).toFixed(2);
+        exchangeRateTxt.innerText = `${amountVal} ${fromCurrency.value} = ${totalExchangeRate} ${toCurrency.value}`;
     })
 }
